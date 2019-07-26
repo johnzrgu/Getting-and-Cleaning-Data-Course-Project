@@ -1,0 +1,18 @@
+
+Input files:
+======================
+X_train.txt - training data set, contains all measurements on 561 features.
+X_test.txt  - test data set, contains all measurements on 561 features.
+y_train.txt - activity id for training set to link activity label.
+y_test.txt  - activity id for test set to link activity label.
+activity_labels.txt - contains label of activities, 6 types.
+features.txt        - contains label of feature, 561 types.
+subject_train.txt   - subject id for training set.
+subject_test.txt    - subject id for test set.
+
+Output files:
+======================
+run_analysis.R   - R code for this project.
+phonedata.csv    - result of run_analysis to combine input files and get it tidy.
+phonedata summary.csv - independent tidy data set with the average of each variable for each activity and each subject in phonedata.txt.
+README - to explain analysis files.
