@@ -16,7 +16,7 @@ train <- train %>% mutate(activitynum = trainlabel$V1, subject = trainsubject$V1
 test <- read.table("../test/X_test.txt") 
 test <- test %>% mutate(activitynum = testlabel$V1, subject = testsubject$V1, row = as.numeric(rownames(test)), set ="test") 
 
-## change features label
+## change features label to descriptive one
 featureslabel$V2 <- sub("^t", "Time ", featureslabel$V2)
 featureslabel$V2 <- sub("^f", "Frequecy ", featureslabel$V2)
 featureslabel1 <- filter(featureslabel, grepl("mean()", V2))
@@ -44,7 +44,8 @@ phonedata <- bind_rows(train, test) %>% merge(activitylabel, by.x = "activitynum
           ##merge featureslabel
           merge(featureslabel, by.x = "measure", by.y = "V1") %>%
           select(-measure, activity = V2.y) %>%
+          ##Transpose measure to columns as variables
           spread(V2, read)
-
+## To create separate with the average of each variable for each activity and each subject.
 phonedata_summary <- phonedata %>% group_by(subject, activity) %>% 
         summarise_at(vars("Mean of Frequecy Body Acceleration Jerk X axis": "Standard Deviation of Time Gravity Acceleration Z axis"), mean)
