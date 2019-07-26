@@ -1,4 +1,4 @@
----
+README
 title: "README"
 output: html_document
 
@@ -14,8 +14,8 @@ subject_test.txt    - subject id for test set.
 
 Output files
 run_analysis.R   - R code for this project.
-phonedata.txt    - result of run_analysis to combine input files and get it tidy.
-phonedata summary.txt - independent tidy data set with the average of each variable for each activity and each subject in phonedata.txt.
+phonedata.csv    - result of run_analysis to combine input files and get it tidy.
+phonedata summary.csv - independent tidy data set with the average of each variable for each activity and each subject in phonedata.txt.
 README - to explain analysis files.
 
 

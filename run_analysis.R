@@ -49,3 +49,6 @@ phonedata <- bind_rows(train, test) %>% merge(activitylabel, by.x = "activitynum
 ## To create separate with the average of each variable for each activity and each subject.
 phonedata_summary <- phonedata %>% group_by(subject, activity) %>% 
         summarise_at(vars("Mean of Frequecy Body Acceleration Jerk X axis": "Standard Deviation of Time Gravity Acceleration Z axis"), mean)
+## Write data set to upload
+write_csv(phonedata, "../phonedata.txt")
+write_csv(phonedata_summary, "../phonedata summary.csv")
