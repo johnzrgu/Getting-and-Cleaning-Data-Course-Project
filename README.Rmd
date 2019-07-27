@@ -1,0 +1,104 @@
+---
+title: "README"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+Input files:
+======================
+X_train.txt - training data set, contains all measurements on 561 features.
+X_test.txt  - test data set, contains all measurements on 561 features.
+y_train.txt - activity id for training set to link activity label.
+y_test.txt  - activity id for test set to link activity label.
+activity_labels.txt - contains label of activities, 6 types.
+features.txt        - contains label of feature, 561 types.
+subject_train.txt   - subject id for training set.
+subject_test.txt    - subject id for test set.
+
+run_analysis.R: code will:
+======================
+1. call library
+2. read label files (activity, features (filtered for mean and standard deviation), y_train, y_test)
+3. read subject files (subject_train, subject_test)
+4. read data set (x_train and x_test)
+5. change features label to descriptive label
+6. Union train and test data, join activity lable to data
+7. transpose data and split variable name to get only numbers without "V" 
+8. join features label
+9. transpose measures to columns as variables
+10. group and average data for each subject and activity
+11. write summarized data to a txt file to submit
+
+Output files:
+======================
+run_analysis.R   - R code for this project.
+phonedata summary.txt - independent tidy data set with the average of each variable for each activity and each subject in phonedata.
+README - to explain analysis files.
+
+
+
+## call libraries
+library(dplyr)
+library(tidyr)
+library(readr)
+
+## read label
+activitylabel <- read.table("./Data file/activity_labels.txt")
+featureslabel <- read.table("./Data file/features.txt") %>% filter(grepl("mean\\(\\)|std\\(\\)", V2))
+trainlabel <- read.table("./Data file/train/y_train.txt")
+testlabel <- read.table("./Data file/test/y_test.txt")
+
+## read subject
+trainsubject <- read.table("./Data file/train/subject_train.txt")
+testsubject <- read.table("./Data file/test/subject_test.txt")
+
+## read data, add y label (acitivity), subject, row number and set (train or test) info
+train <- read.table("./Data file/train/X_train.txt")
+train <- train %>% mutate(activitynum = trainlabel$V1, subject = trainsubject$V1, row = as.numeric(rownames(train)), set ="train") 
+test <- read.table("./Data file/test/X_test.txt") 
+test <- test %>% mutate(activitynum = testlabel$V1, subject = testsubject$V1, row = as.numeric(rownames(test)), set ="test") 
+
+## change features label to descriptive one
+featureslabel$V2 <- sub("^t", "Time ", featureslabel$V2)
+featureslabel$V2 <- sub("^f", "Frequecy ", featureslabel$V2)
+featureslabel1 <- filter(featureslabel, grepl("mean()", V2))
+featureslabel1$V2 <- paste("Mean of", featureslabel1$V2)
+featureslabel2 <- filter(featureslabel, grepl("std()", V2))
+featureslabel2$V2 <- paste("Standard Deviation of", featureslabel2$V2)
+featureslabel <- rbind(featureslabel1, featureslabel2)
+featureslabel$V2 <- gsub("Body", "Body ", featureslabel$V2)
+featureslabel$V2 <- sub("Gravity", "Gravity ", featureslabel$V2)
+featureslabel$V2 <- sub("Acc", "Acceleration ", featureslabel$V2)
+featureslabel$V2 <- sub("Gyro", "Angular velocity ", featureslabel$V2)
+featureslabel$V2 <- sub("Jerk", "Jerk ", featureslabel$V2)
+featureslabel$V2 <- sub("Mag", "Magnitude ", featureslabel$V2)
+featureslabel$V2 <- sub("-X", "X axis", featureslabel$V2)
+featureslabel$V2 <- sub("-Y", "Y axis", featureslabel$V2)
+featureslabel$V2 <- sub("-Z", "Z axis", featureslabel$V2)
+featureslabel$V2 <- sub("\\-mean\\(\\)", "", featureslabel$V2)
+featureslabel$V2 <- sub("\\-std\\(\\)", "", featureslabel$V2)
+
+
+## union train and test data, merge activity label to data
+phonedata <- bind_rows(train, test) %>% merge(activitylabel, by.x = "activitynum", by.y = "V1") %>% select(-activitynum) %>% 
+          ##transpose data and split variable name of measure
+          gather(measure, read, V1:V561) %>% mutate(measure = parse_number(measure)) %>% 
+          ##merge featureslabel
+          merge(featureslabel, by.x = "measure", by.y = "V1") %>%
+          select(-measure, activity = V2.y) %>%
+          ##Transpose measure to columns as variables
+          spread(V2, read) %>% select(-row)
+
+## To create separate with the average of each variable for each activity and each subject.
+phonedata_summary <- phonedata %>% group_by(subject, activity) %>% 
+        summarise_at(vars("Mean of Frequecy Body Acceleration Jerk X axis": "Standard Deviation of Time Gravity Acceleration Z axis"), mean)
+
+## Write data set to upload
+write.table(phonedata_summary, file = "./phonedata summary.txt", row.names = FALSE)
+
+

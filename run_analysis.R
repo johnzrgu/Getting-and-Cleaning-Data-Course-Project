@@ -3,17 +3,17 @@ library(dplyr)
 library(tidyr)
 library(readr)
 ## read label
-activitylabel <- read.table("../activity_labels.txt")
-featureslabel <- read.table("../features.txt") %>% filter(grepl("mean\\(\\)|std\\(\\)", V2))
-trainlabel <- read.table("../train/y_train.txt")
-testlabel <- read.table("../test/y_test.txt")
+activitylabel <- read.table("./Data file/activity_labels.txt")
+featureslabel <- read.table("./Data file/features.txt") %>% filter(grepl("mean\\(\\)|std\\(\\)", V2))
+trainlabel <- read.table("./Data file/train/y_train.txt")
+testlabel <- read.table("./Data file/test/y_test.txt")
 ## read subject
-trainsubject <- read.table("../train/subject_train.txt")
-testsubject <- read.table("../test/subject_test.txt")
+trainsubject <- read.table("./Data file/train/subject_train.txt")
+testsubject <- read.table("./Data file/test/subject_test.txt")
 ## read data, add y label (acitivity), subject, row number and set (train or test) info
-train <- read.table("../train/X_train.txt")
+train <- read.table("./Data file/train/X_train.txt")
 train <- train %>% mutate(activitynum = trainlabel$V1, subject = trainsubject$V1, row = as.numeric(rownames(train)), set ="train") 
-test <- read.table("../test/X_test.txt") 
+test <- read.table("./Data file/test/X_test.txt") 
 test <- test %>% mutate(activitynum = testlabel$V1, subject = testsubject$V1, row = as.numeric(rownames(test)), set ="test") 
 
 ## change features label to descriptive one
@@ -46,9 +46,10 @@ phonedata <- bind_rows(train, test) %>% merge(activitylabel, by.x = "activitynum
           select(-measure, activity = V2.y) %>%
           ##Transpose measure to columns as variables
           spread(V2, read) %>% select(-row)
+
 ## To create separate with the average of each variable for each activity and each subject.
 phonedata_summary <- phonedata %>% group_by(subject, activity) %>% 
         summarise_at(vars("Mean of Frequecy Body Acceleration Jerk X axis": "Standard Deviation of Time Gravity Acceleration Z axis"), mean)
+
 ## Write data set to upload
-write_csv(phonedata, "../phonedata.csv")
-write.table(phonedata_summary, file = "../phonedata summary.txt", row.names = FALSE)
+write.table(phonedata_summary, file = "./phonedata summary.txt", row.names = FALSE)
