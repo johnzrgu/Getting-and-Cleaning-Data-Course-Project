@@ -1,0 +1,208 @@
+ [1] subject
+ID of person whom to measure
+
+ [2] set
+Data set type (2)
+train, test
+
+ [3] activity
+Activity type (6)
+WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
+
+ [4] Mean of Frequecy Body Acceleration Jerk X axis
+Mean value of Frequency on Body Acceleration with Jerk on X axis
+
+ [5] Mean of Frequecy Body Acceleration Jerk Y axis
+Mean value of Frequency on Body Acceleration with Jerk on Y axis
+
+ [6] Mean of Frequecy Body Acceleration Jerk Z axis
+Mean value of Frequency on Body Acceleration with Jerk on Z axis
+
+ [7] Mean of Frequecy Body Acceleration Magnitude 
+Mean value of Frequency on Body Acceleration on Magnitude
+
+ [8] Mean of Frequecy Body Acceleration X axis
+Mean value of Frequency on Body Acceleration on X axis
+
+ [9] Mean of Frequecy Body Acceleration Y axis
+Mean value of Frequency on Body Acceleration on Y axis
+
+[10] Mean of Frequecy Body Acceleration Z axis
+Mean value of Frequency on Body Acceleration on Z axis
+
+[11] Mean of Frequecy Body Angular velocity X axis
+Mean value of Frequency on Body Angular velocity with Jerk on X axis
+
+[12] Mean of Frequecy Body Angular velocity Y axis
+Mean value of Frequency on Body Angular velocity with Jerk on Y axis
+
+[13] Mean of Frequecy Body Angular velocity Z axis
+Mean value of Frequency on Body Angular velocity with Jerk on Z axis
+
+[14] Mean of Frequecy Body Body Acceleration Jerk Magnitude 
+Mean value of Frequency on Body Acceleration with Jerk Magnitude
+
+[15] Mean of Frequecy Body Body Angular velocity Jerk Magnitude 
+Mean value of Frequency on Body Angular velocity with Jerk Magnitude
+
+[16] Mean of Frequecy Body Body Angular velocity Magnitude 
+Mean value of Frequency on Body Angular velocity Magnitude
+
+[17] Mean of Time Body Acceleration Jerk Magnitude 
+Mean of Time on Body Acceleration with Jerk Magnitude 
+
+[18] Mean of Time Body Acceleration Jerk X axis
+Mean of Time on Body Acceleration with Jerk on X axis
+
+[19] Mean of Time Body Acceleration Jerk Y axis
+Mean of Time on Body Acceleration with Jerk on Y axis
+
+[20] Mean of Time Body Acceleration Jerk Z axis
+Mean of Time on Body Acceleration with Jerk on Z axis
+
+[21] Mean of Time Body Acceleration Magnitude 
+Mean of Time on Body Acceleration Magnitude
+
+[22] Mean of Time Body Acceleration X axis
+Mean of Time on Body Acceleration on X axis
+
+[23] Mean of Time Body Acceleration Y axis
+Mean of Time on Body Acceleration on Y axis
+
+[24] Mean of Time Body Acceleration Z axis
+Mean of Time on Body Acceleration on Z axis
+
+[25] Mean of Time Body Angular velocity Jerk Magnitude 
+Mean of Time on Body Angular velocity with Jerk Magnitude 
+
+[26] Mean of Time Body Angular velocity Jerk X axis
+Mean of Time on Body Angular velocity with Jerk on X axis
+
+[27] Mean of Time Body Angular velocity Jerk Y axis
+Mean of Time on Body Angular velocity with Jerk on Y axis
+
+[28] Mean of Time Body Angular velocity Jerk Z axis
+Mean of Time on Body Angular velocity with Jerk on Z axis
+
+[29] Mean of Time Body Angular velocity Magnitude 
+Mean of Time on Body Angular velocity Magnitude
+
+[30] Mean of Time Body Angular velocity X axis
+Mean of Time on Body Angular velocity on X axis
+
+[31] Mean of Time Body Angular velocity Y axis
+Mean of Time on Body Angular velocity on Y axis
+
+[32] Mean of Time Body Angular velocity Z axis
+Mean of Time on Body Angular velocity on Z axis
+
+[33] Mean of Time Gravity Acceleration Magnitude 
+Mean of Time on Gravity Acceleration Magnitude 
+
+[34] Mean of Time Gravity Acceleration X axis
+Mean of Time on Gravity Acceleration on X axis
+
+[35] Mean of Time Gravity Acceleration Y axis
+Mean of Time on Gravity Acceleration on Y axis
+
+[36] Mean of Time Gravity Acceleration Z axis
+Mean of Time on Gravity Acceleration on Z axis
+
+[37] Standard Deviation of Frequecy Body Acceleration Jerk X axis
+Standard deviation value of Frequency on Body Acceleration with Jerk on X axis
+
+[38] Standard Deviation of Frequecy Body Acceleration Jerk Y axis
+Standard deviation value of Frequency on Body Acceleration with Jerk on Y axis
+
+[39] Standard Deviation of Frequecy Body Acceleration Jerk Z axis
+Standard deviation value of Frequency on Body Acceleration with Jerk on Z axis
+
+[40] Standard Deviation of Frequecy Body Acceleration Magnitude 
+Standard deviation value of Frequency on Body Acceleration on Magnitude
+
+[41] Standard Deviation of Frequecy Body Acceleration X axis
+Standard deviation value of Frequency on Body Acceleration on X axis
+
+[42] Standard Deviation of Frequecy Body Acceleration Y axis
+Standard deviation value of Frequency on Body Acceleration on Y axis
+
+[43] Standard Deviation of Frequecy Body Acceleration Z axis
+Standard deviation value of Frequency on Body Acceleration on Z axis
+
+[44] Standard Deviation of Frequecy Body Angular velocity X axis
+Standard deviation value of Frequency on Body Angular velocity with Jerk on X axis
+
+[45] Standard Deviation of Frequecy Body Angular velocity Y axis
+Standard deviation value of Frequency on Body Angular velocity with Jerk on Y axis
+
+[46] Standard Deviation of Frequecy Body Angular velocity Z axis
+Standard deviation value of Frequency on Body Angular velocity with Jerk on Z axis
+
+[47] Standard Deviation of Frequecy Body Body Acceleration Jerk Magnitude 
+Standard deviation value of Frequency on Body Acceleration with Jerk Magnitude
+
+[48] Standard Deviation of Frequecy Body Body Angular velocity Jerk Magnitude 
+Standard deviation value of Frequency on Body Angular velocity with Jerk Magnitude
+
+[49] Standard Deviation of Frequecy Body Body Angular velocity Magnitude 
+Standard deviation value of Frequency on Body Angular velocity Magnitude
+
+[50] Standard Deviation of Time Body Acceleration Jerk Magnitude 
+Standard deviation of Time on Body Acceleration with Jerk Magnitude 
+
+[51] Standard Deviation of Time Body Acceleration Jerk X axis
+Standard deviation of Time on Body Acceleration with Jerk on X axis
+
+[52] Standard Deviation of Time Body Acceleration Jerk Y axis
+Standard deviation of Time on Body Acceleration with Jerk on Y axis
+
+[53] Standard Deviation of Time Body Acceleration Jerk Z axis
+Standard deviation of Time on Body Acceleration with Jerk on Z axis
+
+[54] Standard Deviation of Time Body Acceleration Magnitude 
+Standard deviation of Time on Body Acceleration Magnitude
+
+[55] Standard Deviation of Time Body Acceleration X axis
+Standard deviation of Time on Body Acceleration on X axis
+
+[56] Standard Deviation of Time Body Acceleration Y axis
+Standard deviation of Time on Body Acceleration on Y axis
+
+[57] Standard Deviation of Time Body Acceleration Z axis
+Standard deviation of Time on Body Acceleration on Z axis
+
+[58] Standard Deviation of Time Body Angular velocity Jerk Magnitude 
+Standard deviation of Time on Body Angular velocity with Jerk Magnitude 
+
+[59] Standard Deviation of Time Body Angular velocity Jerk X axis
+Standard deviation of Time on Body Angular velocity with Jerk on X axis
+
+[60] Standard Deviation of Time Body Angular velocity Jerk Y axis
+Standard deviation of Time on Body Angular velocity with Jerk on Y axis
+
+[61] Standard Deviation of Time Body Angular velocity Jerk Z axis
+Standard deviation of Time on Body Angular velocity with Jerk on Z axis
+
+[62] Standard Deviation of Time Body Angular velocity Magnitude 
+Standard deviation of Time on Body Angular velocity Magnitude
+
+[63] Standard Deviation of Time Body Angular velocity X axis
+Standard deviation of Time on Body Angular velocity on X axis
+
+[64] Standard Deviation of Time Body Angular velocity Y axis
+Standard deviation of Time on Body Angular velocity on Y axis
+
+[65] Standard Deviation of Time Body Angular velocity Z axis
+Standard deviation of Time on Body Angular velocity on Z axis
+
+[66] Standard Deviation of Time Gravity Acceleration Magnitude 
+Standard deviation of Time on Gravity Acceleration Magnitude 
+
+[67] Standard Deviation of Time Gravity Acceleration X axis
+Standard deviation of Time on Gravity Acceleration on X axis
+
+[68] Standard Deviation of Time Gravity Acceleration Y axis
+Standard deviation of Time on Gravity Acceleration on Y axis
+
+[69] Standard Deviation of Time Gravity Acceleration Z axis
+Standard deviation of Time on Gravity Acceleration on Z axis
