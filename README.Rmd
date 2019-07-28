@@ -1,13 +1,4 @@
----
-title: "README"
-output: html_document
----
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
-## R Markdown
 
 Input files:
 ======================
@@ -41,7 +32,8 @@ phonedata summary.txt - independent tidy data set with the average of each varia
 README - to explain analysis files.
 
 
-
+Code:
+=======================
 ## call libraries
 library(dplyr)
 library(tidyr)
